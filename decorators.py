@@ -1,0 +1,35 @@
+#
+# def decorator(func):
+#     def decorated():
+#         print('함수 시작!')
+#         func()
+#         print('함수 끝!')
+#     return decorated
+#
+# @decorator
+# def hello_world():
+#     print('Hello World!')
+#
+# hello_world()
+
+def decorator(area):
+    def decorated(w, h):
+        if w > 0 and h > 0:
+            area(w, h)
+        else:
+            print('error')
+    return decorated
+
+@decorator
+def area_tri(w, h):
+    print(0.5 * w * h)
+
+@decorator
+def area_rec(w, h):
+    print(w * h)
+
+area_rec(1, 2)
+area_tri(1, 2)
+
+class User:
+    def auth(self, request, *args, **kwargs):
