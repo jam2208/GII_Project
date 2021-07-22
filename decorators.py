@@ -31,5 +31,3 @@ def area_rec(w, h):
 area_rec(1, 2)
 area_tri(1, 2)
 
-class User:
-    def auth(self, request, *args, **kwargs):
