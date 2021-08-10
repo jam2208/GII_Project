@@ -7,7 +7,7 @@ from articleapp.models import Article
 
 
 class Comment(models.Model):
-    aritcle = models.ForeignKey(Article, on_delete=models.SET_NULL,
+    article = models.ForeignKey(Article, on_delete=models.SET_NULL,
                                 related_name='comment', null=True)
     writer = models.ForeignKey(User, on_delete=models.SET_NULL,
                                related_name='comment', null=True)
