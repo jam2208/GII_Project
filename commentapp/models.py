@@ -5,7 +5,6 @@ from django.db import models
 from articleapp.models import Article
 
 
-
 class Comment(models.Model):
     article = models.ForeignKey(Article, on_delete=models.SET_NULL,
                                 related_name='comment', null=True)
