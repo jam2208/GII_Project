@@ -14,12 +14,25 @@ services:
       - gii_project1_media:/data/media/
 
   django:
-    image: gii_project1:3
+    image: gii_project1:4
     networks:
       - gii_project1_network
     volumes:
       - gii_project1_static:/home/GII_Project/staticfiles/
       - gii_project1_media:/home/GII_Project/media/
+
+  mariadb:
+    image: mariadb:10.5
+    networks:
+      - gii_project1_network
+    volumes:
+      - mariadb_volume:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: password1234
+      MARIADB_DATABASE: django
+      MARIADB_USER: django
+      MARIADB_PASSWORD: password1234
+
 
 networks:
   gii_project1_network:
@@ -27,3 +40,4 @@ networks:
 volumes:
   gii_project1_static:
   gii_project1_media:
+  mariadb_volume:
