@@ -20,6 +20,8 @@ services:
     volumes:
       - gii_project1_static:/home/GII_Project/staticfiles/
       - gii_project1_media:/home/GII_Project/media/
+    secrets:
+      - DJANGO_SECRET_KEY
 
   mariadb:
     image: mariadb:10.5
@@ -41,3 +43,7 @@ volumes:
   gii_project1_static:
   gii_project1_media:
   mariadb_volume:
+
+secrets:
+  DJANGO_SECRET_KEY:
+    external: true
