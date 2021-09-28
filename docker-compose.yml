@@ -14,7 +14,7 @@ services:
       - gii_project1_media:/data/media/
 
   django:
-    image: gii_project1:4
+    image: gii_project1:5
     networks:
       - gii_project1_network
     volumes:
